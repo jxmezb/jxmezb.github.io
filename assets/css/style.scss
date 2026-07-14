@@ -1,6 +1,20 @@
 ---
 ---
 
+@import "minima";
+
+
 body {
-    background: red !important;
+    background-color: #000 !important;
+    color: #c0c0c0 !important;
+}
+
+
+h1, h2, h3 {
+    color: #00ff00 !important;
+}
+
+
+a {
+    color: #00ffff !important;
 }
