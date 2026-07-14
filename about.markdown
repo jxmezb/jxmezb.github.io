@@ -11,7 +11,7 @@ join my
     Discord
 </a>
 
-a mind and keyboard goes to some interesting places!
+a mind and keyboard can go to some interesting places!
 
 Disclaimer: The content on this blog reflects my personal opinions,
 interpretations, and experiences. It is intended for discussion and
