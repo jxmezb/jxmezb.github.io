@@ -22,7 +22,7 @@ title: Nectar of the Blog
 email: jxmezb@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   poorly written blog by jxmezb, come join the history, ideas, opinions,
-  and fictious story-telling.
+  and fictious story-telling
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jxmezb
