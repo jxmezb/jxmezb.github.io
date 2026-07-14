@@ -4,17 +4,85 @@
 @import "minima";
 
 
+/* =========================
+   Global Dark Theme
+   ========================= */
+
 body {
     background-color: #000 !important;
     color: #c0c0c0 !important;
 }
 
 
-h1, h2, h3 {
+.site-header {
+    background-color: #111 !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+
+.site-title {
+    color: #00ff00 !important;
+}
+
+
+.site-nav {
+    background-color: #111 !important;
+}
+
+
+.page-content {
+    background-color: #000 !important;
+}
+
+
+.post-content,
+.post-title {
+    color: #c0c0c0 !important;
+}
+
+
+h1, h2, h3, h4 {
     color: #00ff00 !important;
 }
 
 
 a {
     color: #00ffff !important;
+}
+
+
+.footer {
+    background-color: #111 !important;
+    color: #888 !important;
+}
+
+
+
+/* =========================
+   Homepage Dark Theme
+   (layout: home)
+   ========================= */
+
+.home {
+    background-color: #000 !important;
+}
+
+
+.post-list {
+    background-color: #000 !important;
+}
+
+
+.post-list-heading {
+    color: #00ff00 !important;
+}
+
+
+.post-list li {
+    color: #c0c0c0 !important;
+}
+
+
+.post-meta {
+    color: #888 !important;
 }
