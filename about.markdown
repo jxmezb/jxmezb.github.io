@@ -5,6 +5,7 @@ permalink: /about/
 ---
 
 just some nerdy dude 
+
 <a href="https://discord.gg/R4HRWDFrN" target="_blank" rel="noopener noreferrer">
     Discord
 </a>
