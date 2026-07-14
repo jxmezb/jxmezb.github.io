@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Music Player
+title: jxmezb music
 permalink: /music-player/
 ---
 
