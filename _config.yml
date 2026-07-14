@@ -30,6 +30,8 @@ github_username:  jxmezb
 
 # Build settings
 theme: minima
+minima:
+  custom_css: style
 plugins:
   - jekyll-feed
 
