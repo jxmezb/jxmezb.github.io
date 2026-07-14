@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Music Player
 permalink: /music-player/
 ---
