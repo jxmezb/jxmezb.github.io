@@ -6,7 +6,7 @@ permalink: /music-player/
 
 # 🎵 My Retro Music Player
 
-Welcome to my Windows 98-style music player.
+
 
 <div class="win98-player">
 
