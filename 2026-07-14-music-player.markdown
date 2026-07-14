@@ -3,7 +3,6 @@ layout: page
 title: Music Player
 ---
 
-# My Music
 
 <p>Welcome to my music player!</p>
 
