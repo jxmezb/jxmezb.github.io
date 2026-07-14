@@ -4,10 +4,17 @@ title: About
 permalink: /about/
 ---
 
-just some nerdy dude 
+just a nerdy dude
 
+join my
 <a href="https://discord.gg/R4HRWDFrN" target="_blank" rel="noopener noreferrer">
     Discord
 </a>
 
-a mind and keyboard goes to some interesting places 
+a mind and keyboard goes to some interesting places!
+
+Disclaimer: The content on this blog reflects my personal opinions,
+interpretations, and experiences. It is intended for discussion and
+entertainment and should not be considered professional, legal, financial,
+or medical advice. You're encouraged to think critically, do your own research,
+and draw your own conclusions.
