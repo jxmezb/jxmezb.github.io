@@ -1,30 +1,17 @@
 ---
-layout: post
-title:  "Music Player"
-date:   2026-07-14
-categories: jekyll update
+layout: page
+title: Music Player
 ---
 
+# My Music
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>Welcome to my music player!</p>
 
 <div class="music-player">
 
-    <h3>My Music Player</h3>
+    <h2>My Music Player</h2>
 
-    <p id="song-name">No song selected</p>
+    <p id="song-title"></p>
 
     <audio id="audio-player"></audio>
 
@@ -35,14 +22,10 @@ categories: jekyll update
 
     <br><br>
 
-    <input 
-        type="range" 
-        id="volume" 
-        min="0" 
-        max="1" 
-        step="0.01" 
-        value="1"
-    >
+    <label>
+        Volume:
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+    </label>
 
 </div>
 
@@ -51,45 +34,53 @@ categories: jekyll update
 
 const songs = [
     {
-        name: "-",
-        file: "/assets/music/-.mp3"
-    },
-    {
-        name: "AHCU_-_1st_Privacy_Tool_for_Windows_7.3.2.1crk",
+        name: "AHCU - 1st Privacy Tool for Windows",
         file: "/assets/music/AHCU_-_1st_Privacy_Tool_for_Windows_7.3.2.1crk.mp3"
     },
     {
-        name: "BReWErS_-_Turok_2008_8trn",
+        name: "BReWErS - Turok 2008",
         file: "/assets/music/BReWErS_-_Turok_2008_8trn.mp3"
+    },
+    {
+        name: "SnD - MagicTweak 3.10",
+        file: "/assets/music/SnD_-_MagicTweak3.10kg.mp3"
+    },
+    {
+        name: "big aka - Feel The Bass",
+        file: "/assets/music/big_aka_feel_the_bass.mp3"
+    },
+    {
+        name: "tPORt - Multikeygen for Godlike Developers",
+        file: "/assets/music/tPORt_-_Multikeygen_for_Godlike_Developers.mp3"
     }
 ];
 
 
 let currentSong = 0;
 
-const audio = document.getElementById("audio-player");
-const songName = document.getElementById("song-name");
+const player = document.getElementById("audio-player");
+const title = document.getElementById("song-title");
 const volume = document.getElementById("volume");
 
 
 function loadSong() {
 
-    audio.src = songs[currentSong].file;
-    songName.textContent = songs[currentSong].name;
+    player.src = songs[currentSong].file;
+    title.textContent = songs[currentSong].name;
 
 }
 
 
 function playSong() {
 
-    audio.play();
+    player.play();
 
 }
 
 
 function pauseSong() {
 
-    audio.pause();
+    player.pause();
 
 }
 
@@ -122,9 +113,9 @@ function previousSong() {
 }
 
 
-volume.addEventListener("input", function(){
+volume.addEventListener("input", function() {
 
-    audio.volume = volume.value;
+    player.volume = volume.value;
 
 });
 
