@@ -7,8 +7,8 @@ permalink: /about/
 just a nerdy dude
 
 join my
-<a href="https://discord.gg/R4HRWDFrN" target="_blank" rel="noopener noreferrer">
-    Discord
+<a href="https://linktr.ee/jxmezb" target="_blank" rel="noopener noreferrer">
+    tree
 </a>
 
 a mind and keyboard can go to some interesting places!
