@@ -1,3 +1,6 @@
+---
+---
+
 @import "minima";
 
 /* Dark Retro Site Theme */
@@ -8,11 +11,50 @@ body {
 }
 
 
-h1, h2, h3 {
+.site-header {
+    border-top: none;
+    border-bottom: 1px solid #333;
+    background-color: #111;
+}
+
+
+.site-title {
     color: #00ff00 !important;
 }
 
 
+.site-nav {
+    background-color: #111;
+}
+
+
+.page-content {
+    background-color: #000;
+}
+
+
+.post-content,
+.post-title {
+    color: #c0c0c0 !important;
+}
+
+
+h1, h2, h3, h4 {
+
+    color: #00ff00 !important;
+
+}
+
+
 a {
+
     color: #00ffff !important;
+
+}
+
+
+.footer {
+
+    background-color: #111;
+
 }
