@@ -4,11 +4,11 @@ title: Music Player
 ---
 
 
-<p>Welcome to my music player!</p>
+
 
 <div class="music-player">
 
-    <h2>My Music Player</h2>
+  
 
     <p id="song-title"></p>
 
