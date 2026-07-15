@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "PlayStation Home Revival"
-date:   2026-07-14
-categories: jekyll update
+layout: page
+title: PlayStation Home Revival
+permalink: /playstation-home-revival/
 ---
 Placeholder
