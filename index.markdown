@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Nectar of the Blog
+layout: home
 ---
 
 <div class="win98-desktop">
