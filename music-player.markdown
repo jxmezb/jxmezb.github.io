@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Music Player
+title: 
 permalink: /music-player/
 ---
 
