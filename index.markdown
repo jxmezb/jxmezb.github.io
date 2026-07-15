@@ -18,7 +18,7 @@ layout: home
         </div>
 
 
-        <div class="icon" onclick="openApp('/posts/')">
+        <div class="icon" onclick="openApp('/')">
             <div class="icon-image">📝</div>
             <div>Blog</div>
         </div>
