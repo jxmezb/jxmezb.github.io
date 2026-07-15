@@ -5,6 +5,11 @@ permalink: /games/
 ---
 
 
+<audio id="game-launch-sound" preload="auto">
+    <source src="/assets/sounds/microsoft-windows-98-startup-soundmp3_160k.mp3" type="audio/mp3">
+</audio>
+
+
 <div class="games-window">
 
 
@@ -28,7 +33,7 @@ permalink: /games/
     <div class="games-body">
 
 
-        <div class="game-icon" onclick="startSnakeGame()">
+        <div class="game-icon" ondblclick="launchGame('snake')">
 
             <div class="icon-image">
                 🐍
@@ -42,7 +47,7 @@ permalink: /games/
 
 
 
-        <div class="game-icon">
+        <div class="game-icon" ondblclick="launchGame('pong')">
 
             <div class="icon-image">
                 🏓
@@ -61,7 +66,7 @@ permalink: /games/
 
 
 
-        <div class="game-icon">
+        <div class="game-icon" ondblclick="launchGame('minesweeper')">
 
             <div class="icon-image">
                 💣
@@ -342,5 +347,159 @@ padding:5px 15px;
 }
 
 
+    
+/* Windows 98 Icon Selection Animation */
 
+.game-icon {
+
+    transition: transform 0.1s;
+
+}
+
+
+.game-icon:active {
+
+    transform: scale(0.9);
+
+}
+
+
+.game-icon.selected {
+
+    background:#000080;
+
+    color:white;
+
+}
+
+
+    
 </style>
+
+
+
+
+
+
+<script>
+
+/* ==========================
+   Windows 98 Games Explorer
+   ========================== */
+
+
+// Single-click selects an icon
+document.querySelectorAll(".game-icon").forEach(function(icon){
+
+    icon.addEventListener("click", function(){
+
+        document.querySelectorAll(".game-icon").forEach(function(i){
+
+            i.classList.remove("selected");
+
+        });
+
+        this.classList.add("selected");
+
+    });
+
+});
+
+
+
+
+// Double-click launches the selected game
+document.querySelectorAll(".game-icon").forEach(function(icon){
+
+    icon.addEventListener("dblclick", function(){
+
+        let game = this.getAttribute("data-game");
+
+        launchGame(game);
+
+    });
+
+});
+
+
+
+
+
+function launchGame(game){
+
+    // Play launch sound
+    const sound = document.getElementById("game-launch-sound");
+
+    if(sound){
+
+        sound.currentTime = 0;
+
+        sound.play().catch(function(){});
+
+    }
+
+
+    switch(game){
+
+        case "snake":
+
+            startSnakeGame();
+
+            break;
+
+
+        case "pong":
+
+            alert("Pong.exe is coming soon!");
+
+            break;
+
+
+        case "minesweeper":
+
+            alert("Minesweeper.exe is coming soon!");
+
+            break;
+
+
+        default:
+
+            console.log("Unknown game.");
+
+    }
+
+}
+
+
+
+
+
+/* ==========================
+   Snake Launcher
+   ========================== */
+
+function startSnakeGame(){
+
+    document.getElementById("game-container").innerHTML = `
+
+        <div class="game-window">
+
+            <div class="game-header">
+
+                🐍 Snake.exe
+
+            </div>
+
+            <p style="padding:15px;">
+
+                Snake will go here next.
+
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+</script>
