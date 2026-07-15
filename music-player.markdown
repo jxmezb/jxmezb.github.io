@@ -1,5 +1,10 @@
-<div class="rain-container"></div>
+---
+layout: page
+title: Music Player
+permalink: /music-player/
+---
 
+<div class="rain-container"></div>
 
 <div class="win98-player">
 
@@ -16,7 +21,6 @@
 
     <div class="player-body">
 
-
         <div class="display">
             <span id="song-title">No song selected</span>
         </div>
@@ -26,17 +30,11 @@
 
 
         <div class="controls">
-
             <button onclick="previousSong()">|◀◀</button>
-
             <button onclick="playSong()">▶</button>
-
             <button onclick="pauseSong()">❚❚</button>
-
             <button onclick="nextSong()">▶▶|</button>
-
         </div>
-
 
 
         <div class="volume">
@@ -55,7 +53,6 @@
         </div>
 
 
-
         <div class="playlist">
 
             <div class="playlist-header">
@@ -66,20 +63,17 @@
 
         </div>
 
-
     </div>
 
 </div>
 
 
 
-
 <style>
 
-
-/* =====================
-   Rain Background
-   ===================== */
+/* =========================
+   Rain Effect
+   ========================= */
 
 
 .rain-container {
@@ -101,12 +95,11 @@
 }
 
 
-
 .rain-drop {
 
     position:absolute;
 
-    top:-100px;
+    top:-50px;
 
     width:2px;
 
@@ -116,21 +109,18 @@
 
     opacity:.35;
 
-    animation:rainfall linear infinite;
+    animation:rain linear infinite;
 
 }
 
 
-
-@keyframes rainfall {
-
+@keyframes rain {
 
     from {
 
-        transform:translateY(-100px);
+        transform:translateY(-50px);
 
     }
-
 
     to {
 
@@ -138,25 +128,20 @@
 
     }
 
-
 }
 
 
 
-
-
-/* =====================
+/* =========================
    Windows 98 Player
-   ===================== */
+   ========================= */
 
 
 .win98-player {
 
-
     position:relative;
 
     z-index:2;
-
 
     width:360px;
 
@@ -166,20 +151,15 @@
 
     font-family:"MS Sans Serif",Tahoma,sans-serif;
 
-
     box-shadow:
-
     inset -2px -2px white,
-
     inset 2px 2px #808080;
-
 
 }
 
 
 
 .title-bar {
-
 
     background:navy;
 
@@ -193,13 +173,11 @@
 
     font-weight:bold;
 
-
 }
 
 
 
 .window-buttons button {
-
 
     width:22px;
 
@@ -209,23 +187,19 @@
 
     font-weight:bold;
 
-
 }
 
 
 
 .player-body {
 
-
     padding:10px;
-
 
 }
 
 
 
 .display {
-
 
     background:black;
 
@@ -237,13 +211,11 @@
 
     margin-bottom:10px;
 
-
 }
 
 
 
 .controls {
-
 
     display:flex;
 
@@ -251,13 +223,11 @@
 
     margin-bottom:10px;
 
-
 }
 
 
 
 button {
-
 
     background:#c0c0c0;
 
@@ -269,16 +239,13 @@ button {
 
     font-family:inherit;
 
-
 }
 
 
 
 button:active {
 
-
     border-color:black white white black;
-
 
 }
 
@@ -286,13 +253,11 @@ button:active {
 
 .playlist {
 
-
     border:2px solid;
 
     border-color:black white white black;
 
     background:white;
-
 
 }
 
@@ -300,20 +265,17 @@ button:active {
 
 .playlist-header {
 
-
     background:#000080;
 
     color:white;
 
     padding:3px;
 
-
 }
 
 
 
 #playlist-list {
-
 
     list-style:none;
 
@@ -325,18 +287,15 @@ button:active {
 
     overflow-y:auto;
 
-
 }
 
 
 
 #playlist-list li {
 
-
     cursor:pointer;
 
     padding:3px;
-
 
 }
 
@@ -344,11 +303,9 @@ button:active {
 
 #playlist-list li:hover {
 
-
     background:navy;
 
     color:white;
-
 
 }
 
@@ -362,179 +319,128 @@ button:active {
 <script>
 
 
-/* =====================
-   Create Rain
-   ===================== */
+/* =========================
+   Generate Rain
+   ========================= */
 
 
 const rain = document.querySelector(".rain-container");
 
 
-for(let i = 0; i < 100; i++){
+for(let i = 0; i < 100; i++) {
 
+    let drop = document.createElement("div");
 
-    let drop=document.createElement("div");
+    drop.className = "rain-drop";
 
+    drop.style.left = Math.random() * 100 + "vw";
 
-    drop.className="rain-drop";
+    drop.style.animationDuration =
+        (0.5 + Math.random() * 1.5) + "s";
 
-
-    drop.style.left=Math.random()*100+"vw";
-
-
-    drop.style.animationDuration=
-
-    (0.5 + Math.random()*1.5)+"s";
-
-
-    drop.style.animationDelay=
-
-    Math.random()*5+"s";
+    drop.style.animationDelay =
+        Math.random() * 5 + "s";
 
 
     rain.appendChild(drop);
 
-
 }
 
 
 
 
-
-
-
-/* =====================
+/* =========================
    Music Player
-   ===================== */
+   ========================= */
 
 
-const songs=[
-
+const songs = [
 
 {
-
 name:"AHCU - 1st Privacy Tool for Windows",
-
 file:"/assets/music/AHCU_-_1st_Privacy_Tool_for_Windows_7.3.2.1crk.mp3"
-
 },
 
-
-    {
-
+{
 name:"-",
-
 file:"/assets/music/-.mp3"
-
 },
-
     
 {
-
 name:"BReWErS - Turok 2008",
-
 file:"/assets/music/BReWErS_-_Turok_2008_8trn.mp3"
-
 },
 
-
 {
-
 name:"SnD - MagicTweak 3.10",
-
 file:"/assets/music/SnD_-_MagicTweak3.10kg.mp3"
-
 },
 
-
 {
-
 name:"big aka - Feel The Bass",
-
 file:"/assets/music/big_aka_feel_the_bass.mp3"
-
 },
 
-
 {
-
 name:"tPORt - Multikeygen for Godlike Developers",
-
 file:"/assets/music/tPORt_-_Multikeygen_for_Godlike_Developers.mp3"
-
 }
-
 
 ];
 
 
-
-let currentSong=0;
-
-
-const player=document.getElementById("audio-player");
-
-const title=document.getElementById("song-title");
-
-const playlist=document.getElementById("playlist-list");
-
-const volume=document.getElementById("volume");
+let currentSong = 0;
 
 
+const player = document.getElementById("audio-player");
+
+const title = document.getElementById("song-title");
+
+const playlist = document.getElementById("playlist-list");
+
+const volume = document.getElementById("volume");
 
 
 
 songs.forEach((song,index)=>{
 
 
-let item=document.createElement("li");
+    let item=document.createElement("li");
+
+    item.textContent=song.name;
 
 
-item.textContent=song.name;
+    item.onclick=function(){
+
+        currentSong=index;
+
+        loadSong();
+
+        playSong();
+
+    };
 
 
-item.onclick=function(){
-
-
-currentSong=index;
-
-loadSong();
-
-playSong();
-
-
-};
-
-
-
-playlist.appendChild(item);
+    playlist.appendChild(item);
 
 
 });
 
 
 
-
-
 function loadSong(){
 
+    player.src=songs[currentSong].file;
 
-player.src=songs[currentSong].file;
-
-
-title.textContent=songs[currentSong].name;
-
+    title.textContent=songs[currentSong].name;
 
 }
 
 
 
-
 function playSong(){
 
-
-player.play();
-
+    player.play();
 
 }
 
@@ -542,74 +448,59 @@ player.play();
 
 function pauseSong(){
 
-
-player.pause();
-
+    player.pause();
 
 }
-
 
 
 
 function nextSong(){
 
+    currentSong++;
 
-currentSong++;
+    if(currentSong >= songs.length){
 
+        currentSong=0;
 
-if(currentSong>=songs.length){
-
-currentSong=0;
-
-}
+    }
 
 
-loadSong();
+    loadSong();
 
-playSong();
-
+    playSong();
 
 }
-
 
 
 
 function previousSong(){
 
+    currentSong--;
 
-currentSong--;
+    if(currentSong < 0){
 
+        currentSong=songs.length-1;
 
-if(currentSong<0){
-
-currentSong=songs.length-1;
-
-}
+    }
 
 
-loadSong();
+    loadSong();
 
-playSong();
-
+    playSong();
 
 }
-
 
 
 
 volume.addEventListener("input",()=>{
 
-
-player.volume=volume.value;
-
+    player.volume=volume.value;
 
 });
 
 
 
-
 loadSong();
-
 
 
 </script>
