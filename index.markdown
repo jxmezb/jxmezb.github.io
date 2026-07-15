@@ -37,6 +37,21 @@ title: Nectar of the Blog
     <div class="desktop-icons">
 
 
+         <div class="icon" ondblclick="openApp('/games/')">
+
+             <div class="icon-image">
+                 🎮
+            </div>
+
+           <div>
+                Games
+             </div>
+
+</div>
+
+
+
+
         <div class="icon" ondblclick="openApp('/blog/')">
 
             <div class="icon-image">
