@@ -4,6 +4,18 @@ title: jxmezb music
 permalink: /music-player/
 ---
 
+
+<div class="rain"></div>
+
+<div class="win98-player">
+
+    ...
+    
+</div>
+
+
+
+
 # 🎵 My Retro Music Player
 
 
@@ -330,4 +342,68 @@ volume.addEventListener("input", function(){
 
 loadSong();
 
+
+
+
+    /* ==========================
+   Animated Rain Background
+   ========================== */
+
+body {
+    overflow-x: hidden;
+}
+
+
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.drop {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: #00ffff;
+    opacity: 0.4;
+    animation: fall linear infinite;
+}
+
+
+@keyframes fall {
+
+    from {
+        transform: translateY(-100vh);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+
+}
+    const rain = document.querySelector(".rain");
+
+
+for(let i = 0; i < 80; i++){
+
+    let drop = document.createElement("div");
+
+    drop.className = "drop";
+
+    drop.style.left = Math.random() * 100 + "vw";
+
+    drop.style.animationDuration = 
+        (0.5 + Math.random() * 1.5) + "s";
+
+    drop.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    rain.appendChild(drop);
+
+}
 </script>
