@@ -301,6 +301,19 @@ body {
 }
 
 
+.page-heading {
+    display: none;
+}
+
+.post-list {
+    display: none;
+}
+
+.post-list-heading {
+    display: none;
+}
+
+
 
 </style>
 
