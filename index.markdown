@@ -19,7 +19,7 @@ title: Nectar of the Blog
         </div>
 
 
-        <div class="icon" onclick="openApp('/')">
+        <div class="icon" onclick="openApp('/blog/')">
             <div class="icon-image">📝</div>
             <div>Blog</div>
         </div>
