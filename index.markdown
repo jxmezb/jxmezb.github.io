@@ -581,6 +581,27 @@ body {
 }
 
 
+
+
+    
+/* =====================
+   Draggable Windows
+   ===================== */
+
+.computer-window {
+
+    cursor:default;
+
+}
+
+
+.window-title {
+
+    cursor:move;
+
+}
+
+
 </style>
 
 
@@ -588,6 +609,11 @@ body {
 
 
 <script>
+
+
+/* =====================
+   Open Applications
+   ===================== */
 
 
 function openApp(page){
@@ -598,6 +624,11 @@ function openApp(page){
 
 
 
+
+
+/* =====================
+   Windows 98 Clock
+   ===================== */
 
 
 function updateClock(){
@@ -620,9 +651,7 @@ function updateClock(){
 }
 
 
-
 setInterval(updateClock,1000);
-
 
 updateClock();
 
@@ -631,13 +660,115 @@ updateClock();
 
 
 
+/* =====================
+   Windows 98 Boot Screen
+   ===================== */
+
+
 setTimeout(function(){
 
 
-    document.getElementById("boot-screen").style.display="none";
+    let boot = document.getElementById("boot-screen");
+
+
+    if(boot){
+
+        boot.style.display="none";
+
+    }
 
 
 },3000);
+
+
+
+
+
+
+
+/* =====================
+   Draggable Windows
+   ===================== */
+
+
+const windowBox = document.querySelector(".computer-window");
+
+const titleBar = document.querySelector(".window-title");
+
+
+let isDragging = false;
+
+let offsetX = 0;
+
+let offsetY = 0;
+
+
+
+if(titleBar && windowBox){
+
+
+
+    titleBar.addEventListener("mousedown", function(e){
+
+
+        isDragging = true;
+
+
+        offsetX = e.clientX - windowBox.offsetLeft;
+
+
+        offsetY = e.clientY - windowBox.offsetTop;
+
+
+
+    });
+
+
+
+
+
+
+    document.addEventListener("mousemove", function(e){
+
+
+
+        if(isDragging){
+
+
+            windowBox.style.left =
+
+            (e.clientX - offsetX) + "px";
+
+
+
+            windowBox.style.top =
+
+            (e.clientY - offsetY) + "px";
+
+
+
+        }
+
+
+
+    });
+
+
+
+
+
+
+    document.addEventListener("mouseup", function(){
+
+
+        isDragging = false;
+
+
+    });
+
+
+
+}
 
 
 
